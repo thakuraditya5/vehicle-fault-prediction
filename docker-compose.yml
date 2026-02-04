@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  bcs-predictor:
+    build: .
+    container_name: bcs_predictor_app
+    ports:
+      - "8000:8000"
+      - "8501:8501"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
